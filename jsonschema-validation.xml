@@ -419,7 +419,7 @@
 
                 <section title="minContains">
                     <t>
-                        The value of this keyword MUST be a non-negative integer.
+                        The value of this keyword MUST be a positive integer.
                     </t>
                     <t>
                         An array instance is valid against "minContains" if the number of
@@ -428,9 +428,9 @@
                         greater than, or equal to, the value of this keyword.
                     </t>
                     <t>
-                        A value of 0 is allowed, but is only useful for setting a range
-                        of occurrences from 0 to the value of "maxContains".  A value of
-                        0 with no "maxContains" causes "contains" to always pass validation.
+                        A value of 0 is not meaningful, as the "contains" keyword will fail
+                        validation independently of minContains if the array instance contains
+                        no matching elements.
                     </t>
                     <t>
                         If "contains" is not present within the same schema object,
